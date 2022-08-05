@@ -44,7 +44,7 @@
         <input
             type="checkbox"
             {{ $post->is_published === true ? 'checked' : '' }}
-            class="bg-transparent block border-b-2 inline text-2xl outline-none"
+            class="bg-transparent  border-b-2 inline text-2xl outline-none"
             name="is_published">
 
         <input
