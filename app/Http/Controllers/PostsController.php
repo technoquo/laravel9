@@ -132,9 +132,11 @@ class PostsController extends Controller
         $request->validated();
 
 
-       Post::where('id', $id)->update($request->except(
-        ['_token', '_method']
-        ));
+     Post::where('id', $id)->update(
+            $request->is_published === 'on' 
+                ? array_replace($request->except('_token', '_method'), ['is_published' => true])
+                : array_replace($request->except('_token', '_method'), ['is_published' => false])
+        );
 
        return redirect(route('blog.index'));
     
