@@ -13,6 +13,11 @@ class Post extends Model
         'title', 'excerpt', 'body', 'image_path', 'is_published', 'min_to_read'
      ];
 
+
+     public function user()
+     {
+        return $this->belongsTo(User::class);
+     }
     // Change table name
     // protected $table = 'posts';
 

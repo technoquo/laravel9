@@ -63,9 +63,9 @@
                     Made by:
                         <a href=""
                            class="text-green-500 italic hover:text-green-400 hover:border-b-2 border-green-400 pb-3 transition-all">
-                            Dary
+                            {{ $post->user->name }}
                         </a>
-                    op 13-07-2022
+                    op  {{  $post->updated_at->format('d/m/Y') }}
                 </span>
                  <a href="{{ route('blog.edit', $post->id) }}" class="block italic text-green-500 border-b-2 border-green-400"> Edit </a>
                  <form action="{{ route('blog.destroy', $post->id) }}" method="POST">
@@ -79,5 +79,8 @@
             </div>
         </div>
     @endforeach
+    <div class="mx-auto pb-10 w-4/5">
+     {{ $posts->links() }}
+    </div>
 </body>
 </html>
