@@ -23,6 +23,12 @@ class Post extends Model
      {
         return $this->hasOne(PostMeta::class);
      }
+
+
+     public function categories()
+     {
+        return $this->belongsToMany(Category::class);
+     }
     // Change table name
     // protected $table = 'posts';
 
